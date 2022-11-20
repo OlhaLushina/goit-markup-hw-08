@@ -1,0 +1,28 @@
+/*---------Логотип---------------------*/
+.logo {
+    display: block;
+
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.header__logo {
+    margin-right: 93px;
+}
+
+.footer__logo {
+    margin-bottom: 20px;
+}
+
+.logo__right-part {
+    color: var(--primary-black-color);
+}
+
+.logo__right-part--white {
+    color: var(--primary-white-color);
+}
