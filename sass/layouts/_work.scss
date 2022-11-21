@@ -1,4 +1,12 @@
 /*---------Чим ми займаємося----------------*/
+.section-work {
+    display: none;
+
+    @include desktop {
+        display: block;
+    }
+}
+
 .work {
     display: flex;
 }

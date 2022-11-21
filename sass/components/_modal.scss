@@ -22,8 +22,8 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 528px;
-    height: 581px;
+    width: 320px;
+    height: 580px;
     padding: 40px;
 
     background: var(--primary-white-color);
@@ -31,6 +31,17 @@
     border-radius: 4px;
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: scroll;
+
+    @include mobile {
+        width: 460px;
+        height: 509px;
+    }
+
+    @include desktop {
+        width: 528px;
+        height: 581px;
+    }
 }
 
 .backdrop.is-hidden .modal {
@@ -68,10 +79,14 @@
 
     font-weight: 700;
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.5;
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--title-text-color);
+
+    @include desktop {
+        line-height: 1.15;
+    }
 }
 
 .form-field {
@@ -201,8 +216,20 @@
 }
 
 .agree-label {
-    line-height: 1.71;
+    width: 210px;
+
+    font-size: 12px;
+    line-height: 1.67;
     letter-spacing: 0.03em;
+
+    @include mobile {
+        width: 346px;
+    }
+
+    @include desktop {
+        font-size: 14px;
+        line-height: 1.71;
+    }
 }
 
 .agree-link {
