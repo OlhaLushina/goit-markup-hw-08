@@ -22,8 +22,9 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 320px;
-    height: 580px;
+    
+    width: 95%;
+    max-height: 95%;
     padding: 40px;
 
     background: var(--primary-white-color);
@@ -35,12 +36,10 @@
 
     @include mobile {
         width: 460px;
-        height: 509px;
     }
 
     @include desktop {
         width: 528px;
-        height: 581px;
     }
 }
 
@@ -106,6 +105,7 @@
 
 .form-control {
     position: relative;
+    display: block;
 }
 
 .form-input-text {
@@ -216,15 +216,11 @@
 }
 
 .agree-label {
-    width: 210px;
+    width: 100%;
 
     font-size: 12px;
     line-height: 1.67;
     letter-spacing: 0.03em;
-
-    @include mobile {
-        width: 346px;
-    }
 
     @include desktop {
         font-size: 14px;

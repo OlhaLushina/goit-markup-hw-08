@@ -106,15 +106,32 @@ body {
   display: block;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+  font-size: 24px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--accent-color);
   text-decoration: none;
 }
+@media screen and (min-width: 1200px) {
+  .logo {
+    font-size: 26px;
+    line-height: 1.19;
+  }
+}
 
 .header__logo {
-  margin-right: 93px;
+  flex-grow: 1;
+}
+@media screen and (min-width: 768px) {
+  .header__logo {
+    flex-grow: 0;
+    margin-right: 88px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__logo {
+    margin-right: 93px;
+  }
 }
 
 .footer__logo {
@@ -212,8 +229,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 320px;
-  height: 580px;
+  width: 95%;
+  max-height: 95%;
   padding: 40px;
   background: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -225,13 +242,11 @@ body {
 @media screen and (min-width: 480px) {
   .modal {
     width: 460px;
-    height: 509px;
   }
 }
 @media screen and (min-width: 1200px) {
   .modal {
     width: 528px;
-    height: 581px;
   }
 }
 
@@ -294,6 +309,7 @@ body {
 
 .form-control {
   position: relative;
+  display: block;
 }
 
 .form-input-text {
@@ -412,15 +428,10 @@ body {
 }
 
 .agree-label {
-  width: 210px;
+  width: 100%;
   font-size: 12px;
   line-height: 1.67;
   letter-spacing: 0.03em;
-}
-@media screen and (min-width: 480px) {
-  .agree-label {
-    width: 346px;
-  }
 }
 @media screen and (min-width: 1200px) {
   .agree-label {
@@ -478,10 +489,152 @@ body {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 767px) {
+  .header__container {
+    height: 60px;
+  }
+}
+
+/* Іконка мобільного меню */
+.icon-menu {
+  padding: 0;
+  border: none;
+  background: none;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-menu:hover {
+  fill: var(--accent-color);
+}
+@media screen and (min-width: 768px) {
+  .icon-menu {
+    display: none;
+  }
+}
+
+.icon-menu .icon {
+  width: 40px;
+  height: 40px;
+}
+
+.menu-container {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.menu-container.is-open {
+  display: block;
+}
+.menu-container > .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.icon-menu-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: none;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-menu-close:hover, .icon-menu-close:focus {
+  fill: var(--accent-color);
+}
+
+.mobile-menu .item {
+  margin-bottom: 32px;
+}
+
+.mobile-menu .link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--title-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu .link:hover, .mobile-menu .link:focus {
+  color: var(--accent-color);
+}
+
+.mobile-menu-contacts .item {
+  margin-bottom: 32px;
+}
+
+.mobile-menu-contacts .link {
+  text-decoration: none;
+}
+
+.mobile-menu-phone .link {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+}
+@media screen and (min-width: 480px) {
+  .mobile-menu-phone .link {
+    font-size: 34px;
+  }
+}
+
+.mobile-menu-email .link {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+  color: var(--primary-text-color);
+}
+@media screen and (min-width: 480px) {
+  .mobile-menu-email .link {
+    font-size: 24px;
+  }
+}
+
+.mobile-menu-networks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@media screen and (min-width: 480px) {
+  .mobile-menu-networks {
+    flex-wrap: nowrap;
+  }
+}
+
+.mobile-menu-networks .item:not(:last-child) {
+  padding-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mobile-menu-networks .link {
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+  text-decoration: none;
+}
 
 .navigation {
-  display: flex;
-  align-items: center;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .navigation {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .header__navigation {
@@ -526,25 +679,42 @@ body {
 
 /*--------Контакти у шапці праворуч----------*/
 .contacts {
-  display: flex;
-  align-items: stretch;
+  display: none;
 }
-
-.contacts__item:not(:last-child) {
-  margin-right: 50px;
+@media screen and (min-width: 768px) {
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contacts {
+    flex-direction: row;
+    gap: 50px;
+  }
 }
 
 .contacts__link {
   display: flex;
   align-items: center;
+  /*
   padding-top: 32px;
   padding-bottom: 32px;
+  */
   font-weight: 500;
-  line-height: 1.14;
+  font-size: 12px;
+  line-height: 1.67;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
   text-decoration: none;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 1200px) {
+  .contacts__link {
+    font-size: 14px;
+    line-height: 1.14;
+  }
 }
 .contacts__link:hover, .contacts__link:focus {
   color: var(--accent-color);
@@ -553,6 +723,28 @@ body {
 .contacts__icon {
   margin-right: 10px;
   fill: currentColor;
+}
+
+.contacts__icon--email {
+  width: 14px;
+  height: 10px;
+}
+@media screen and (min-width: 1200px) {
+  .contacts__icon--email {
+    width: 16px;
+    height: 12px;
+  }
+}
+
+.contacts__icon--phone {
+  width: 10px;
+  height: 14px;
+}
+@media screen and (min-width: 1200px) {
+  .contacts__icon--phone {
+    width: 10px;
+    height: 16px;
+  }
 }
 
 /*-----------------Герой-----------------*/
@@ -989,12 +1181,44 @@ body {
 
 .footer__container {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  gap: 60px;
+  text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  .footer__container {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0;
+    text-align: left;
+  }
 }
 
-.footer__address {
-  margin-right: 70px;
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+@media screen and (min-width: 768px) {
+  .footer__info {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer__info {
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__address {
+    margin-right: 70px;
+  }
 }
 
 .address__item:not(:last-child) {
@@ -1017,8 +1241,10 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer__networks-block {
-  margin-right: 93px;
+@media screen and (min-width: 1200px) {
+  .footer__networks-block {
+    margin-right: 93px;
+  }
 }
 
 .networks-block__title {
@@ -1033,8 +1259,15 @@ body {
 /* ---- Форма підписки на розсилку -----*/
 .subscription {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
+  flex-direction: column;
+  gap: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .subscription {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0;
+  }
 }
 
 .subscription__label {
@@ -1052,7 +1285,7 @@ body {
 }
 
 .subscription__email {
-  width: 358px;
+  width: 100%;
   height: 50px;
   padding: 15px 16px;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -1074,6 +1307,16 @@ body {
 .subscription__email::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
+@media screen and (min-width: 768px) {
+  .subscription__email {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .subscription__email {
+    width: 358px;
+  }
+}
 
 .subscription-btn {
   display: flex;
@@ -1082,6 +1325,7 @@ body {
   height: 50px;
   padding-left: 28px;
   padding-right: 28px;
+  margin: 0 auto;
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -1091,6 +1335,11 @@ body {
 }
 .subscription-btn:hover, .subscription-btn:focus {
   background-color: var(--accent-active-color);
+}
+@media screen and (min-width: 1200px) {
+  .subscription-btn {
+    margin: 0;
+  }
 }
 
 .subscription-btn__title {
