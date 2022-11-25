@@ -11,16 +11,13 @@
 
 .icons__item {
     @include calc-width(2, 30px);
+    height: 92px;
 
     @include tablet {
-        @include calc-width(3, 30px);
+        @include calc-width(2, 30px);
     }
 
     @include desktop {
-        /*
-            width: 170px;
-                height: 92px;
-                */
         @include calc-width(6, 30px);
     }
 }
